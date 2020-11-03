@@ -163,7 +163,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SATDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Cours">
+        <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseId" />
           </Key>
@@ -198,7 +198,7 @@
           <Property Name="InstructorName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SCSID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cours" Relationship="Self.FK_ScheduledClasses_Courses" FromRole="ScheduledClasses" ToRole="Courses" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_ScheduledClasses_Courses" FromRole="ScheduledClasses" ToRole="Courses" />
           <NavigationProperty Name="Enrollments" Relationship="Self.FK_Enrollments_ScheduledClasses" FromRole="ScheduledClasses" ToRole="Enrollments" />
           <NavigationProperty Name="ScheduledClassStatus" Relationship="Self.FK_ScheduledClasses_ScheduledClassStatuses" FromRole="ScheduledClasses" ToRole="ScheduledClassStatuses" />
         </EntityType>
@@ -239,7 +239,7 @@
           <NavigationProperty Name="Students" Relationship="Self.FK_Students_StudentStatuses" FromRole="StudentStatuses" ToRole="Students" />
         </EntityType>
         <Association Name="FK_ScheduledClasses_Courses">
-          <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+          <End Role="Courses" Type="SATDatabaseModel.Course" Multiplicity="1" />
           <End Role="ScheduledClasses" Type="Self.ScheduledClass" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
@@ -299,7 +299,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SATDatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Courses" EntityType="Self.Cours" />
+          <EntitySet Name="Courses" EntityType="SATDatabaseModel.Course" />
           <EntitySet Name="Enrollments" EntityType="Self.Enrollment" />
           <EntitySet Name="ScheduledClasses" EntityType="Self.ScheduledClass" />
           <EntitySet Name="ScheduledClassStatuses" EntityType="Self.ScheduledClassStatus" />
@@ -333,7 +333,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SATDatabaseModelStoreContainer" CdmEntityContainer="SATDatabaseEntities">
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="SATDatabaseModel.Cours">
+            <EntityTypeMapping TypeName="SATDatabaseModel.Course">
               <MappingFragment StoreEntitySet="Courses">
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="CourseName" ColumnName="CourseName" />

@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f1c87ab802d24ae4bbfdc1d23de764d9" Name="Diagram1">
-        <EntityTypeShape EntityType="SATDatabaseModel.Cours" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATDatabaseModel.Course" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SATDatabaseModel.Enrollment" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SATDatabaseModel.ScheduledClass" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SATDatabaseModel.ScheduledClassStatus" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
