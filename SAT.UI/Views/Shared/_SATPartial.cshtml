@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-link text-uppercase text-expanded dropdown">
+                <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Manage
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @Html.ActionLink("Students", "Index", "Students", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                    @Html.ActionLink("Courses", "Index", "Courses", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                    @Html.ActionLink("Scheduled Classes", "Index", "ScheduledClasses", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                    @Html.ActionLink("Enrollments", "Index", "Enrollments", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                </div>
+            </li>
+        </ul>
+    }
+}

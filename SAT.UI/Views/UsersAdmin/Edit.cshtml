@@ -1,31 +1,29 @@
 ﻿@model SAT.UI.Models.EditUserViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Users";
 }
 
-<h2>Edit.</h2>
+<h2 class="text-center my-3">@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Edit User Form.</h4>
-        <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2 offset-1" })
+            <div class="col-md-10 offset-1">
                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                @Html.ValidationMessageFor(model => model.Email)
             </div>
         </div>
         <div class="form-group">
-            @Html.Label("Roles", new { @class = "control-label col-md-2" })
-            <span class=" col-md-10">
+            @Html.Label("Roles:", new { @class = "control-label col-md-1 offset-1" })
+            <span class=" col-md-6">
                 @foreach (var item in Model.RolesList)
                 {
                     <input type="checkbox" name="SelectedRole" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
@@ -35,14 +33,14 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="offset-1 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default ourBtn" />
             </div>
         </div>
     </div>
 }
 
-<div>
+<div class="offset-1">
     @Html.ActionLink("Back to List", "Index")
 </div>
 

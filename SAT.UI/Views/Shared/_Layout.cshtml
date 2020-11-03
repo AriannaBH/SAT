@@ -28,22 +28,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Home")">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("About", "Home")">Link1</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Contact", "Home")">Link2</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Contact", "Home")">Link3</a>
+                        <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Index","Home")">Home</a>
                     </li>
                 </ul>
+                @Html.Partial("_SATPartial")
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
