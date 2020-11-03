@@ -44,6 +44,7 @@
                         <a class="nav-link text-uppercase text-expanded" href="@Url.Action("Contact", "Home")">Link3</a>
                     </li>
                 </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
@@ -59,24 +60,17 @@
 
     <script>
         $('#navbarResponsive .navbar-nav li').each(function () {
-
             var fullAnchor = $(this).find('a').attr('href');
-
             var aController = fullAnchor.split('/');
-
             var fullPath = (window.location.pathname + location.search).substr(1);
-
             var pController = fullPath.split('/');
-
             if (aController[1] == pController[0]) {
                 $(this).addClass('active');
                 $(this).find('a').append('<span class="sr-only">(current)</span>');
             }
-
             if (aController[1] == "Home" && window.location.pathname != fullAnchor) {
                 $(this).removeClass();
             }
-
             if (aController[1] == "Account" && window.location.pathname != fullAnchor) {
                 $(this).removeClass();
             }

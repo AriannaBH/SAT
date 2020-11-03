@@ -8,9 +8,9 @@
         <EntityTypeShape EntityType="SATDatabaseModel.Course" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SATDatabaseModel.Enrollment" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SATDatabaseModel.ScheduledClass" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATDatabaseModel.ScheduledClassStatus" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATDatabaseModel.Student" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATDatabaseModel.StudentStatus" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATDatabaseModel.ScheduledClassStatus" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATDatabaseModel.Student" Width="1.5" PointX="7.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATDatabaseModel.StudentStatus" Width="1.5" PointX="7.625" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="SATDatabaseModel.FK_ScheduledClasses_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="SATDatabaseModel.FK_Enrollments_ScheduledClasses" ManuallyRouted="false" />
         <AssociationConnector Association="SATDatabaseModel.FK_Enrollments_Students" ManuallyRouted="false" />
