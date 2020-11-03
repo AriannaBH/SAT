@@ -1,0 +1,24 @@
+﻿body {
+    color: white;
+}
+
+.ourBtn {
+    color: white;
+    border: 3px solid;
+    background-color: rgba(117, 117, 117, .7);
+}
+    .ourBtn:hover {
+        color: rgb(255, 255, 255);
+        background-color: #e6a756;
+    }
+
+a {
+    color: #e6a756;
+}
+    a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+.intro-text, .cta-inner {
+    color: black;
+}
