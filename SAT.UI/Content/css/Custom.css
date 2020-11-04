@@ -22,3 +22,7 @@ a {
 .intro-text, .cta-inner {
     color: black;
 }
+
+.table td, .table th {
+    border-top: 2px solid black;
+}

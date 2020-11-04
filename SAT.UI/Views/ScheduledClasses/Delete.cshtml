@@ -1,72 +1,62 @@
 ﻿@model SAT.DATA.EF.ScheduledClass
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Scheduled Class";
+}
+<h2 class="text-center my-3">@ViewBag.Title</h2>
+
+<h3 class="text-center my-2">
+    Are you sure you want to delete this <em>@Model.ScheduledClassStatus.SCSName.ToLower()</em> scheduled class: <strong>@Model.Course.CourseName</strong>
+</h3>
+<div class="row text-center">
+    <div class="col-md-4 offset-2">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EndDate)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.InstructorName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InstructorName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+        </dl>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color text-center mb-3">
+        <input type="submit" value="Delete" class="btn btn-default ourBtn mb-3" />
+        <br />
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ScheduledClass</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InstructorName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InstructorName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Course.CourseName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Course.CourseName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ScheduledClassStatus.SCSName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>

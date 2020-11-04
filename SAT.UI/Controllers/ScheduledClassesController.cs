@@ -10,6 +10,7 @@ using SAT.DATA.EF;
 
 namespace SAT.UI.Controllers
 {
+    [Authorize]
     public class ScheduledClassesController : Controller
     {
         private SATDatabaseEntities db = new SATDatabaseEntities();

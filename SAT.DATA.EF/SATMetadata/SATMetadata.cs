@@ -38,6 +38,7 @@ namespace SAT.DATA.EF
         public string Notes { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
+        [Display(Name = "Is Active")]
         public bool IsActive { get; set; }
     }
 
@@ -57,6 +58,7 @@ namespace SAT.DATA.EF
 
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true, NullDisplayText = "[-Date Not Provided-]")]
         [Required(ErrorMessage = "This field is required!")]
+        [Display(Name = "Enrollment Date")]
         public System.DateTime EnrollmentDate { get; set; }
     }
 
@@ -69,18 +71,22 @@ namespace SAT.DATA.EF
     public class ScheduledClassMetadata
     {
         [Required(ErrorMessage = "This field is required!")]
+        [Display(Name = "Course ID")]
         public int CourseId { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true, NullDisplayText = "[-Date Not Provided-]")]
+        [Display(Name = "Start Date")]
         public System.DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true, NullDisplayText = "[-Date Not Provided-]")]
+        [Display(Name = "End Date")]
         public System.DateTime EndDate { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
         [StringLength(40, ErrorMessage = "40 Character Max!")]
+        [Display(Name = "Instructor Name")]
         public string InstructorName { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
@@ -88,6 +94,7 @@ namespace SAT.DATA.EF
         public string Location { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
+        [Display(Name = "Schedule Class Status ID")]
         public int SCSID { get; set; }
     }
 
@@ -101,10 +108,12 @@ namespace SAT.DATA.EF
     {
         [Required(ErrorMessage = "This field is required!")]
         [StringLength(20, ErrorMessage = "20 Character Max!")]
+        [Display(Name ="First Name")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
         [StringLength(20, ErrorMessage = "20 Character Max!")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         
         [StringLength(15, ErrorMessage = "15 Character Max!")]
@@ -120,6 +129,7 @@ namespace SAT.DATA.EF
         public string State { get; set; }
         
         [StringLength(10, ErrorMessage = "10 Character Max!")]
+        [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
         
         [StringLength(13, ErrorMessage = "13 Character Max!")]
@@ -133,7 +143,10 @@ namespace SAT.DATA.EF
         public string PhotoUrl { get; set; }
 
         [Required(ErrorMessage = "This field is required!")]
+        [Display(Name = "Student Status ID")]
         public int SSID { get; set; }
+        
+        
     }
 
     [MetadataType(typeof(ScheduledClassStatusMetadata))]
@@ -146,6 +159,7 @@ namespace SAT.DATA.EF
     {
         [Required(ErrorMessage = "This field is required!")]
         [StringLength(50, ErrorMessage = "50 Character Max!")]
+        [Display(Name = "Class Status")]
         public string SCSName { get; set; }
     }
 
@@ -159,6 +173,7 @@ namespace SAT.DATA.EF
     {
         [Required(ErrorMessage = "This field is required!")]
         [StringLength(30, ErrorMessage = "30 Character Max!")]
+        [Display(Name ="Student Status")]
         public string SSName { get; set; }
         
         [StringLength(250, ErrorMessage = "250 Character Max!")]

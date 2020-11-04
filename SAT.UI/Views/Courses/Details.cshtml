@@ -1,66 +1,72 @@
 ﻿@model SAT.DATA.EF.Course
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Course Details";
 }
 
-<h2>Details</h2>
+<h2 class="text-center my-3">@ViewBag.Title</h2>
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
+<div class="row text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.CourseName)
-        </dd>
+    <div class="col-md-4 offset-2">
+        <dl class="dl-horizontal">
+            <dt class="mt-2">
+                @Html.DisplayNameFor(model => model.CourseName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseDescription)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CourseName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CourseDescription)
-        </dd>
+            <dt class="mt-2">
+                @Html.DisplayNameFor(model => model.CourseDescription)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreditHours)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CourseDescription)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreditHours)
-        </dd>
+            <dt class="mt-2">
+                @Html.DisplayNameFor(model => model.CreditHours)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Curriculum)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreditHours)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Curriculum)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
+            <dt class="mt-2">
+                @Html.DisplayNameFor(model => model.Curriculum)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Curriculum)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
+            <dt class="mt-2">
+                @Html.DisplayNameFor(model => model.Notes)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Notes)
+            </dd>
+
+            <dt class="mt-2">
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsActive)
+            </dd>
+        </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <p class="text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

@@ -32,7 +32,12 @@ namespace SAT.DATA.EF
         public string Email { get; set; }
         public string PhotoUrl { get; set; }
         public int SSID { get; set; }
-    
+
+        public string FullName()
+        {
+            return string.Format($"{FirstName} {LastName}");
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual StudentStatus StudentStatus { get; set; }

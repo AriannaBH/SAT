@@ -10,8 +10,10 @@ using SAT.DATA.EF;
 
 namespace SAT.UI.Controllers
 {
+    [Authorize]
     public class StudentsController : Controller
     {
+
         private SATDatabaseEntities db = new SATDatabaseEntities();
 
         // GET: Students
