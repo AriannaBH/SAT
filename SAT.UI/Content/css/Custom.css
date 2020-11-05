@@ -12,7 +12,7 @@
         background-color: #e6a756;
     }
 
-a {
+a, .ourH5 {
     color: #e6a756;
 }
     a:hover {

@@ -4,102 +4,59 @@
     ViewBag.Title = "Delete Student";
 }
 
-<h2 class="text-center my-3">@ViewBag.Title</h2>
+<div class="text-center">
+    <h2 class="my-3 ourH5">@ViewBag.Title</h2>
+    <h1> @Model.FullName()</h1>
+    <h3>
+        <span class="ourH5">Major:</span>
+        @if (Model.Major != null)
+        {
+            @Html.DisplayFor(model => model.Major)
+        }
+        else
+        { <span>Undeclared</span>}
+    </h3>
 
-<h3 class="text-center my-2">Are you sure you want to delete <strong>@Model.FullName()</strong>?</h3>
-<div class="row text-center">
-    <div class="col-md-4 offset-2">
-        <dl class="dl-horizontal">
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.Address)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Address)
-            </dd>
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.City)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.City)
-            </dd>
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.State)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.State)
-            </dd>
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.ZipCode)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ZipCode)
-            </dd>
-
-            @*<dt class="mt-2">
-                    @Html.DisplayNameFor(model => model.PhotoUrl)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.PhotoUrl)
-                </dd>*@
-
-
-        </dl>
-
-    </div>
-    <div class="col-md-4">
-        <dl class="dl-horizontal">
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.Major)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Major)
-            </dd>
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.Phone)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Phone)
-            </dd>
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-
-            <dt class="mt-2">
-                @Html.DisplayNameFor(model => model.StudentStatus.SSName)
-            </dt>
-
-            <dd>
+    <hr />
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <h5 class="mb-0 ourH5">Student Status</h5>
+            <p class="mb-3">
                 @Html.DisplayFor(model => model.StudentStatus.SSName)
-            </dd>
-        </dl>
-    </div>
-</div>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+            </p>
+            <h5 class="mb-0 ourH5">Address</h5>
+            <p class="mb-3">
+                @Html.DisplayFor(model => model.Address)
+                <br />
+                @Html.DisplayFor(model => model.City),
+                @Html.DisplayFor(model => model.State),
+                @Html.DisplayFor(model => model.ZipCode)
+            </p>
+            <h5 class="mb-0 ourH5">Phone</h5>
+            <p class="mb-3">
+                @Html.DisplayFor(model => model.Phone)
+            </p>
+            <h5 class="mb-0 ourH5">Email</h5>
+            <p class="mb-3">
+                @Html.DisplayFor(model => model.Email)
+            </p>
+        </div>
 
-    <div class="form-actions no-color text-center mb-3">
-        <input type="submit" value="Delete" class="btn btn-default ourBtn mb-3" />
-        <br />
-        @Html.ActionLink("Back to List", "Index")
+        <div class="col-md-4">
+            <img src="~/Content/StudentImages/@Model.PhotoUrl" alt="@Model.FullName()" class="img-responsive img-thumbnail ourImage" />
+        </div>
     </div>
-}
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h3 class="text-center my-5">Are you sure you want to delete <strong>@Model.FullName()</strong>?</h3>
+        <div class="form-actions no-color text-center mb-3">
+            <input type="submit" value="Delete" class="btn btn-default ourBtn mb-3" />
+            <br />
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+
+
 

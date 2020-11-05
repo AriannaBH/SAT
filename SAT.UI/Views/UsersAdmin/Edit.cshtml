@@ -1,7 +1,7 @@
 ﻿@model SAT.UI.Models.EditUserViewModel
 
 @{
-    ViewBag.Title = "Edit Users";
+    ViewBag.Title = "Edit User";
 }
 
 <h2 class="text-center my-3">@ViewBag.Title</h2>
@@ -22,27 +22,25 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.Label("Roles:", new { @class = "control-label col-md-1 offset-1" })
-            <span class=" col-md-6">
+            <div class="col-md-10 offset-md-1">
+                @Html.Label("Roles:", new { @class = "control-label pr-3" })
                 @foreach (var item in Model.RolesList)
                 {
-                    <input type="checkbox" name="SelectedRole" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
+                    <input type="checkbox" name="SelectedRoles" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
                     @Html.Label(item.Value, new { @class = "control-label" })
                 }
-            </span>
+            </div>
         </div>
 
         <div class="form-group">
-            <div class="offset-1 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default ourBtn" />
+            <div class="offset-1 col-md-10 text-center">
+                <input type="submit" value="Save" class="btn btn-default ourBtn mb-3" />
+                <br />
+                @Html.ActionLink("Back to List", "Index")
             </div>
         </div>
     </div>
 }
-
-<div class="offset-1">
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
