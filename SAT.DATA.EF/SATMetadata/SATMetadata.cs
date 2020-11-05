@@ -65,7 +65,10 @@ namespace SAT.DATA.EF
     [MetadataType(typeof(ScheduledClassMetadata))]
     public partial class ScheduledClass
     {
-        
+        public string ScheduledCourse
+        {
+            get { return $"{StartDate:d} - {Course.CourseName} - {Location}"; }
+        }
     }
 
     public class ScheduledClassMetadata
